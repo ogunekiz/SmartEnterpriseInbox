@@ -48,10 +48,10 @@ Projeyi ayağa kaldırmadan önce;
 1- Docker klasörü içindeki docker-compose.yml dosyasını docker compose up -d komutu ile çalıştırın ve içinde yer alan postgres, rabbitmq, redis gibi araçları kurun.
 
 2- Aşağıdaki komutlar ile db üzerinde tabloları oluşturun.
-
+```
   Add-Migration AddOutboxPattern -StartupProject SmartEnterpriseInbox.WebApi -Project SmartEnterpriseInbox.Infrastructure -OutputDir Migrations
   Update-Database -StartupProject SmartEnterpriseInbox.WebApi -Project SmartEnterpriseInbox.Infrastructure
-
+```
 ### appsettings.json Konfigürasyonu
 
 3- `appsettings.json` dosyasındaki aşağıdaki alanları kendi kurumsal veya kişisel hesaplarınıza göre doldurmanız gerekmektedir:
