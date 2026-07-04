@@ -1,0 +1,10 @@
+{
+	"schema_version": "1",
+	"description": "Gelen kurumsal talepleri analiz eder, sınıflandırır ve yapılandırılmış JSON formatına dönüştürür.",
+	"execution_settings": {
+		"default": {
+			"max_tokens": 1000,
+			"temperature": 0.1
+		}
+	}
+}

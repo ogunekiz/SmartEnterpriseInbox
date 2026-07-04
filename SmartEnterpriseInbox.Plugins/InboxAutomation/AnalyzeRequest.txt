@@ -1,0 +1,20 @@
+Sana bir þirketin destek, CRM veya ERP sistemine düþen bir müþteri veya personel talebi iletilecektir.
+Bu talebi dikkatlice analiz et ve aþaðýdaki kurallara göre sadece belirtilen JSON formatýnda yanýt dön. 
+Cevabýnda JSON dýþýnda hiçbir açýklama metni, markdown (```json gibi) veya ek karakter yer almamalýdýr. Doðrudan süslü parantez ile baþla ve bitir.
+
+Kurallar:
+1. Kategori: Talebi sadece þu deðerlerden biri olarak sýnýflandýr: 'Teknik Destek', 'Fatura/Muhasebe', 'Satýþ/Teklif', 'Ýnsan Kaynaklarý'.
+2. AciliyetDurumu: Talebin içeriðine göre aciliyeti belirle: 'Düþük', 'Orta', 'Yüksek', 'Kritik'.
+3. Ozet: Talebi tek cümleyle net bir þekilde özetle.
+4. AksiyonPlani: Talebin çözümü için arka plandaki otomasyon sisteminin atmasý gereken ilk adýmý yaz.
+
+Gelen Talep:
+{{$input}}
+
+Yanýt Formatý (JSON):
+{
+  "Category": "",
+  "Urgency": "",
+  "Summary": "",
+  "ActionPlan": ""
+}

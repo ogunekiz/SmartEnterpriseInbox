@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  enterprise-db:
+    image: postgres:15-alpine
+    container_name: enterprise_postgres_db
+    environment:
+      POSTGRES_USER: enterprise_user
+      POSTGRES_PASSWORD: SuperSecurePassword123!
+      POSTGRES_DB: enterprise_inbox_db
+    ports:
+      - "5432:5432"
+    restart: always
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  enterprise-redis:
+    image: redis/redis-stack-server:latest
+    container_name: enterprise_redis_cache
+    ports:
+      - "6379:6379"
+      - "8001:8001"
+    restart: always
+    volumes:
+      - redisdata:/data
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: enterprise_rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    restart: always
+
+volumes:
+  pgdata:
+  redisdata:
